@@ -4,7 +4,7 @@
   "description": "どんなページのタイトルでも文字化けせずに取ってきたい",
   "main": "index.coffee",
   "scripts": {
-    "test": "mocha -t 5s --compilers coffee:coffee-script/register test.coffee"
+    "test": "mocha -s 2s -t 5s --compilers coffee:coffee-script/register test.coffee"
   },
   "author": "ebith",
   "license": "MIT",
