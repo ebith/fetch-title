@@ -4,7 +4,7 @@ iconv = require 'iconv-lite'
 
 module.exports = (url, callback) ->
   buffer = new Buffer 0
-  req = request.get url, timeout: 10 * 1000, headers: {'User-Agent': 'fetch-title'}
+  req = request.get url, agent: false, timeout: 10 * 1000, headers: {'User-Agent': 'fetch-title'}
   req.on 'error', (err) ->
     console.log err.stack
   req.on 'response', (res) ->
