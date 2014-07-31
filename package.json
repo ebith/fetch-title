@@ -1,0 +1,20 @@
+{
+  "name": "fetch-title",
+  "version": "0.1.0",
+  "description": "どんなページのタイトルでも文字化けせずに取ってきたい",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "mocha -t 5s --compilers coffee:coffee-script/register test.coffee"
+  },
+  "author": "ebith",
+  "license": "MIT",
+  "dependencies": {
+    "iconv-lite": "^0.4.4",
+    "jschardet": "^1.1.0",
+    "request": "^2.39.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.21.3"
+  }
+}
