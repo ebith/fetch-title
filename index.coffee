@@ -24,7 +24,7 @@ module.exports = (url, callback) ->
         else
           body = iconv.decode buffer, charset
         title = body.match(/<title.*?>([\s\S]*?)<\/title>/i)?[1].trim()
-        description = body.match(/meta name="description" content="(.*?)"/im)?[1]
+        description = body.match(/meta name="description" content="(.*?)"/i)?[1].trim()
         callback title, description, url
     else
       do req.abort
