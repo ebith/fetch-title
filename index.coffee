@@ -23,7 +23,7 @@ module.exports = (url, callback) ->
           body = buffer.toString()
         else
           body = iconv.decode buffer, charset
-        title = body.match(/<title.*?>(.*?)<\/title>/i)?[1]
+        title = body.match(/<title.*?>([\s\S]*?)<\/title>/i)?[1].trim()
         description = body.match(/meta name="description" content="(.*?)"/im)?[1]
         callback title, description, url
     else

@@ -25,4 +25,8 @@ describe 'レスポンスヘッダに文字コードを含まないページ', -
       assert.ok title, '4Gamer.net ― 日本最大級の総合ゲーム情報サイト。最新ゲームのニュース，レビューはここで！'
       do done
 
-describe '過去に文字化けしたページ', ->
+describe '過去にうまく取得できなかったページ', ->
+  it '<title>内に改行を含む (Humble Bundle)', (done) ->
+    fetchTitle 'https://www.humblebundle.com/', (title) ->
+      assert.ok title, 'Humble'
+      do done
