@@ -29,4 +29,7 @@ describe '過去にうまく取得できなかったページ', ->
   it '<title>内に改行を含む (Humble Bundle)', (done) ->
     fetchTitle 'https://www.humblebundle.com/', (title) ->
       assert.ok title, 'Humble'
+  it 'ISO-8859-2誤検出による文字化け', (done) ->
+    fetchTitle 'http://www.techdoll.jp/2014/08/22/create-gif/', (title) ->
+      assert.equal title, 'YouTubeのURLに“gif”と足すだけでgif動画ができるらしい | TechDoll.jp'
       do done

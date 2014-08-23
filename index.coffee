@@ -15,7 +15,7 @@ module.exports = (url, callback) ->
       res.on 'end', ->
         if not (charset in ['utf-8', 'shift_jis', 'euc-jp'])
           charset = chardet.detect buffer
-          if charset.confidence * 100 < 60
+          if charset.confidence * 100 < 80
             charset = 'UTF-8'
           else
             charset = charset.encoding
