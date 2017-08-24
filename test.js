@@ -29,4 +29,16 @@ describe('レスポンスヘッダに文字コードを含まないページ', (
       done();
     });
   });
+  it('画像 (Google)', (done) => {
+    fetchTitle('https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png').catch((error) => {
+      assert.strictEqual(error.message, 'This is not HTML.');
+      done();
+    });
+  });
+  it('Teapot (httpbin.org)', (done) => {
+    fetchTitle('https://httpbin.org/status/418').catch((error) => {
+      assert.strictEqual(error.message, 'HTTPError: Response code 418 (I\'m a teapot)');
+      done();
+    });
+  });
 });
