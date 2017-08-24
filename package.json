@@ -1,20 +1,23 @@
 {
   "name": "fetch-title",
-  "version": "0.1.0",
-  "description": "どんなページのタイトルでも文字化けせずに取ってきたい",
-  "main": "index.coffee",
-  "scripts": {
-    "test": "mocha -s 2s -t 5s --compilers coffee:coffee-script/register test.coffee"
-  },
+  "version": "1.0.0",
+  "main": "index.js",
   "author": "ebith",
   "license": "MIT",
   "dependencies": {
-    "iconv-lite": "^0.4.4",
-    "jschardet": "^1.1.0",
-    "request": "^2.39.0"
+    "got": "^7.1.0",
+    "iconv-lite": "^0.4.18",
+    "jschardet": "^1.5.1",
+    "jsdom": "^11.2.0"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
-    "mocha": "^1.21.3"
+    "eslint": "^4.5.0",
+    "eslint-watch": "^3.1.2",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^3.5.0"
+  },
+  "scripts": {
+    "eslint": "esw -w index.js",
+    "test": "mocha --require intelli-espower-loader --timeout 5000 --slow 2000"
   }
 }
